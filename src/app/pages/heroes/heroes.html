@@ -1,6 +1,6 @@
 <h2>Heroes</h2>
 
-<ul>
+<!-- <ul>
   @for (hero of ($heroes | async); track hero.id) {
   <li>
     <a [routerLink]="['/hero', hero.id]">
@@ -8,4 +8,20 @@
     </a>
   </li>
   }
+</ul> -->
+
+@if (loading()) {
+<p>Cargando...</p>
+} @else if (error()) {
+<p class="error">{{ error() }}</p>
+} @else {
+<ul>
+  @for (hero of heroes(); track hero.id) {
+  <li>
+    <a [routerLink]="['/hero', hero.id]">
+      {{ hero.name }}
+    </a>
+  </li>
+  }
 </ul>
+}
