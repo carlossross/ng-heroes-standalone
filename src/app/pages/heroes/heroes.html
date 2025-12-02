@@ -1,2 +1,7 @@
-<h2>Heroes List</h2>
-<p>Luego aquí cargaremos data.</p>
+<h2>Heroes</h2>
+
+<ul>
+  @for (hero of heroes; track hero.id) {
+  <li>{{ hero.name }}</li>
+  }
+</ul>
