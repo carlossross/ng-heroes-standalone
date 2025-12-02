@@ -1,2 +1,19 @@
 <h2>Hero Detail</h2>
-<p>Hero ID: {{ id }}</p>
+
+@if (loading()) {
+<p>Cargando héroes...</p>
+} @else if (error()) {
+<p class="error">{{ error() }}</p>
+} @else if (hero()) {
+<h3>{{ hero()?.name }}</h3>
+<p>Id: {{ hero()?.id }}</p>
+
+<h4>Powerstats</h4>
+<ul>
+  <li>Strength: {{ hero()?.powerstats?.strength }}</li>
+  <li>Speed: {{ hero()?.powerstats?.speed }}</li>
+  <li>Power: {{ hero()?.powerstats?.power }}</li>
+</ul>
+} @else {
+<p>Héroe no encontrado.</p>
+}
