@@ -2,6 +2,10 @@
 
 <ul>
   @for (hero of heroes; track hero.id) {
-  <li>{{ hero.name }}</li>
+  <li>
+    <a [routerLink]="['/hero', hero.id]">
+      {{ hero.name }}
+    </a>
+  </li>
   }
 </ul>
