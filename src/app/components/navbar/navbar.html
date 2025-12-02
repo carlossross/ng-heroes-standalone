@@ -1,4 +1,25 @@
-<nav class="navbar">
-  <a routerLink="/">Home</a>
-  <a routerLink="/heroes"></a>
-</nav>
+<header class="navbar">
+  <div class="navbar__inner">
+    <div class="navbar__brand">
+      <span class="navbar__logo">NG</span>
+      <div class="navbar__title">
+        <span class="navbar__name">Heroes Standalone</span>
+        <span class="navbar__subtitle">Angular Modern · Signals Ready</span>
+      </div>
+    </div>
+
+    <nav class="navbar__nav">
+      <a
+        routerLink="/"
+        routerLinkActive="navbar__link--active"
+        class="navbar__link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Home
+      </a>
+      <a routerLink="/heroes" routerLinkActive="navbar__link--active" class="navbar__link">
+        Heroes
+      </a>
+    </nav>
+  </div>
+</header>

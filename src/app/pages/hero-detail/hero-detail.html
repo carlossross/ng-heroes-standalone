@@ -1,4 +1,4 @@
-<h2>Hero Detail</h2>
+<!-- <h2>Hero Detail</h2>
 
 @if (loading()) {
 <p>Cargando héroes...</p>
@@ -16,4 +16,56 @@
 </ul>
 } @else {
 <p>Héroe no encontrado.</p>
-}
+} -->
+
+<section class="hero-detail">
+  @if (loading()) {
+  <p class="hero-detail__status">Cargando héroe...</p>
+  } @else if (error()) {
+  <p class="hero-detail__status hero-detail__status--error">{{ error() }}</p>
+  } @else if (hero()) {
+  <article class="hero-detail__card">
+    <header class="hero-detail__header">
+      <span class="hero-detail__id">#{{ hero()?.id }}</span>
+      <h2 class="hero-detail__name">{{ hero()?.name }}</h2>
+      <p class="hero-detail__slug">{{ hero()?.slug }}</p>
+    </header>
+
+    <section class="hero-detail__section">
+      <h3>Powerstats</h3>
+      <div class="hero-detail__stats">
+        <div class="hero-detail__stat">
+          <span class="hero-detail__stat-label">Intelligence</span>
+          <span class="hero-detail__stat-value">{{ hero()?.powerstats?.intelligence }}</span>
+        </div>
+        <div class="hero-detail__stat">
+          <span class="hero-detail__stat-label">Strength</span>
+          <span class="hero-detail__stat-value">{{ hero()?.powerstats?.strength }}</span>
+        </div>
+        <div class="hero-detail__stat">
+          <span class="hero-detail__stat-label">Speed</span>
+          <span class="hero-detail__stat-value">{{ hero()?.powerstats?.speed }}</span>
+        </div>
+        <div class="hero-detail__stat">
+          <span class="hero-detail__stat-label">Durability</span>
+          <span class="hero-detail__stat-value">{{ hero()?.powerstats?.durability }}</span>
+        </div>
+        <div class="hero-detail__stat">
+          <span class="hero-detail__stat-label">Power</span>
+          <span class="hero-detail__stat-value">{{ hero()?.powerstats?.power }}</span>
+        </div>
+        <div class="hero-detail__stat">
+          <span class="hero-detail__stat-label">Combat</span>
+          <span class="hero-detail__stat-value">{{ hero()?.powerstats?.combat }}</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="hero-detail__footer">
+      <a routerLink="/heroes" class="hero-detail__back">← Volver a la lista</a>
+    </footer>
+  </article>
+  } @else {
+  <p class="hero-detail__status">Héroe no encontrado.</p>
+  }
+</section>

@@ -1,10 +1,10 @@
 import { Component, computed, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { HeroStoreService } from '../../stores/hero-store.service';
 
 @Component({
   selector: 'app-hero-detail',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './hero-detail.html',
   styleUrl: './hero-detail.scss',
 })

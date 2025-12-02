@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+/* styles.scss */
+
+/* Reset suave */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Theme */
+:root {
+  --color-bg: #0b1120; /* fondo principal */
+  --color-bg-elevated: #111827;
+  --color-border-subtle: #1f2937;
+  --color-accent: #3b82f6; /* azul */
+  --color-accent-soft: rgba(59, 130, 246, 0.15);
+  --color-text: #e5e7eb;
+  --color-text-soft: #9ca3af;
+  --color-danger: #f97373;
+  --radius-lg: 12px;
+  --radius-xl: 18px;
+  --shadow-soft: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+  background: radial-gradient(circle at top, #1f2937 0, #020617 60%);
+  color: var(--color-text);
+  min-height: 100vh;
+}
+
+/* Links globales */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Clase reutilizable para mensajes de error */
+.error {
+  color: var(--color-danger);
+  font-size: 0.9rem;
+}
+
+/* Utilidad de contenedor principal (por si la quieres fuera de app-root) */
+.app-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2rem;
+}
